@@ -1,0 +1,9 @@
+// react
+npx create-react-app frontend      
+npm install react react-dom react-router-dom axios
+
+// node
+npm i -y
+npm i express body-parser mongoose cors 
+
+

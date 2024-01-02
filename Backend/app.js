@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const url = "mongodb://localhost:27017/DSREACT"
+// const url = "mongodb://localhost:27017/DSREACT"
+const url = "mongodb://127.0.0.1:27017/DSREACT"
 const app = express();
 const apiRouter = require("./routes/ApiRoute")
 // const webRouter = require("./routes/WebRoutes")
