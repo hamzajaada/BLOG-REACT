@@ -6,15 +6,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Style pour le titre du site */
-h1 {
+header h1 {
   margin: 0; /* Supprimer les marges par défaut */
 }
 
 /* Styles pour les boutons */
-button {
+header div .Link-header {
   background-color: #61dafb; /* Couleur de fond du bouton */
   color: #fff; /* Couleur du texte du bouton */
   padding: 10px 15px; /* Espacement intérieur du bouton */
@@ -26,11 +29,11 @@ button {
 }
 
 /* Style pour le bouton Login (ajuster la couleur si nécessaire) */
-button:nth-child(2) {
+header div .Link-header:nth-child(2) {
   background-color: #28a745;
 }
 
 /* Effet de survol pour les boutons */
-button:hover {
+header div .Link-header:hover {
   background-color: #007bff; /* Couleur de fond au survol */
 }

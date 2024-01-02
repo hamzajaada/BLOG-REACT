@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -7,28 +7,28 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
+} */
 
-div {
+div.Home {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 400px;
+  /* width: 400px; */
 }
 
-h1 {
+div.Home h1 {
   color: #333;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-ul {
+div.Home ul {
   list-style-type: none;
   padding: 0;
 }
 
-li {
+div.Home ul li {
   border-bottom: 1px solid #eee;
   padding: 10px 0;
   display: flex;
@@ -36,13 +36,13 @@ li {
   align-items: center;
 }
 
-p {
+div.Home ul li p {
   font-size: 18px;
   margin: 0;
   flex-grow: 1;
 }
 
-button {
+div.Home ul li button {
   background-color: #3498db;
   color: #fff;
   border: none;
@@ -53,6 +53,6 @@ button {
   font-size: 14px;
 }
 
-button:hover {
+div.Home ul li button:hover {
   background-color: #2a75b3;
 }
