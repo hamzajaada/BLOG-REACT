@@ -1,0 +1,36 @@
+/* Styles pour l'en-tête */
+header {
+  background-color: #333; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  padding: 20px; /* Espacement intérieur */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style pour le titre du site */
+h1 {
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+/* Styles pour les boutons */
+button {
+  background-color: #61dafb; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  padding: 10px 15px; /* Espacement intérieur du bouton */
+  margin-left: 10px; /* Marge à gauche pour les boutons suivants */
+  border: none; /* Supprimer la bordure */
+  cursor: pointer; /* Curseur au survol */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 14px; /* Taille de la police */
+}
+
+/* Style pour le bouton Login (ajuster la couleur si nécessaire) */
+button:nth-child(2) {
+  background-color: #28a745;
+}
+
+/* Effet de survol pour les boutons */
+button:hover {
+  background-color: #007bff; /* Couleur de fond au survol */
+}
