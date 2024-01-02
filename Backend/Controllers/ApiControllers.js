@@ -61,13 +61,16 @@ const DeletePost = async (req,res)=>{
 }
 const Login = async(req,res)=>{
     try{
+        // console.log(req.body);
         const user = req.body.username;
         const password = req.body.password;
+
         if(user =="admin" && password =="123"){
             const jsenwebtkn = jwt.sign({user:user,password:password},"hamzajaada");
             res.json(jsenwebtkn);
+            // console.log(jsenwebtkn);
         }
-        else{
+        else{ 
             console.log("erreur de l'authentification");
         }
     }catch(err){
