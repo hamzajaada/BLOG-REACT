@@ -13,9 +13,6 @@ const LoginForm = () => {
   function handelLogin(e){
     // empecher l'evenement de formulaire
     e.preventDefault();
-    // console.log("Avant");
-    // console.log(username);
-    // console.log(password);
     axios.post('http://localhost:3000/api/login',{username,password}).then(
       res=>{
         navigate('/')
