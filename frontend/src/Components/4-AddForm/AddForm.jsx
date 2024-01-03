@@ -4,31 +4,33 @@ import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 
 const AddForm = () => {
-  const [title, setTitle] = useState('');
+  const [titre, setTitre] = useState('');
   const [slug, setSlug] = useState('');
   const [content, setContent] = useState('');
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handelSubmit(e){
     e.preventDefault();
     console.log('avant');
-    axios.post("http://localhost:3000/api/posts", {title,slug,content})
-      .then((res)=>{
-        console.log(res.data);
-        Navigate('/')
-      })
+    axios.post("http://localhost:3000/api/posts", {titre,slug,content})
+      .then(
+        res=>{
+          console.log('après')
+          navigate('/')
+        }
+      )
       .catch(err => console.log(err));
   }
   
   return (
     <div className="add-form-container">
       <form onSubmit={handelSubmit}>
-        <label htmlFor="title">Titre:</label>
+        <label htmlFor="titre">Titre:</label>
         <input
           type="text"
-          id="title"
-          name="title"
-          onChange={e=>(setTitle(e.target.value))}
+          id="titre"
+          name="titre"
+          onChange={e=>(setTitre(e.target.value))}
         />
 
         <label htmlFor="slug">Slug:</label>

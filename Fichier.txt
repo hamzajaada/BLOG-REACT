@@ -16,3 +16,6 @@ npm i express body-parser mongoose cors
 const jsenwebtkn = jwt.sign({user:user,password:password},"hamzajaada");
 
 
+obligatoire de return un fichier un fichier, objet, mmessage in api 
+
+

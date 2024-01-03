@@ -39,10 +39,12 @@ const addPost = async(req,res)=>{
         const posts = new Post(req.body);
         posts.save();
         console.log("created " + posts);
+        res.json(posts);
     } catch(err){
         console.log("erreur lors de creation de post"+err);
     }
 }
+
 const ModifierPost = async(req,res)=>{
     try{
         await Post.findByIdAndUpdate(req.params.id,req.body).then((result)=>{
