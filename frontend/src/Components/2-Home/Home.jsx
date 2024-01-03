@@ -12,18 +12,25 @@ const Home = () => {
        .catch(err=>console.log(err));
     },[])
 
+    function hendelDelete(id) {
+      console.log("delete");
+      axios.delete('http://localhost:3000/api/posts/' + id)
+        .then((res) => { window.location.reload()})
+        .catch((err) => console.log(err));
+    }
+
 
   return (
     <div className='Home'>
-      <h1>Liste des Articles</h1>
+      <h1>Liste d'articles</h1>
       {
         Posts.map((data)=>(
          <ul key = {data._id}>
           <li>
             <p>{data.titre}</p>
-            <Link to ={`update-post/${data._id}`} className='btn'>Update</Link>
-            <button >Éditer</button>
-            <button >Supprimer</button>
+            <Link className="link-page" to ={`/view-post/${data._id}`}>Lire</Link>
+            <Link className="link-page" to ={`/update-post/${data._id}`}>Éditer</Link>
+            <button className="link-page" onClick={(e)=> hendelDelete(data._id)} >Supprimer</button>
           </li>
       </ul>
         ))

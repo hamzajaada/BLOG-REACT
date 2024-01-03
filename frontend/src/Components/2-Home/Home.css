@@ -11,21 +11,25 @@
 
 div.Home {
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   padding: 20px;
-  /* width: 400px; */
+  
 }
 
 div.Home h1 {
   color: #333;
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 div.Home ul {
   list-style-type: none;
   padding: 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.Home ul li {
@@ -42,7 +46,7 @@ div.Home ul li p {
   flex-grow: 1;
 }
 
-div.Home ul li button {
+div.Home ul li button, div.Home ul li .link-page {
   background-color: #3498db;
   color: #fff;
   border: none;
@@ -53,6 +57,10 @@ div.Home ul li button {
   font-size: 14px;
 }
 
-div.Home ul li button:hover {
+div.Home ul li .link-page {
+  text-decoration: none;
+}
+
+div.Home ul li button:hover , div.Home ul li .link-page:hover  {
   background-color: #2a75b3;
 }

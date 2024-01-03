@@ -28,7 +28,7 @@ const UpdateForm = () => {
     axios.put(`http://localhost:3000/api/posts/${id}`, {titre,slug,content})
       .then(res=>{
           console.log('après')
-          navigate('/')
+          navigate('/Home')
         }
       )
       .catch(err => console.log(err));

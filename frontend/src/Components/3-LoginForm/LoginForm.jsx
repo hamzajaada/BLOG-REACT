@@ -15,7 +15,7 @@ const LoginForm = () => {
     e.preventDefault();
     axios.post('http://localhost:3000/api/login',{username,password}).then(
       res=>{
-        navigate('/')
+        navigate('/Home')
       }
     ).catch(err=>console.log(err));
 

@@ -16,7 +16,7 @@ const AddForm = () => {
       .then(
         res=>{
           console.log('après')
-          navigate('/')
+          navigate('/Home')
         }
       )
       .catch(err => console.log(err));
