@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css'
 import axios from 'axios';
 import { useEffect ,useState } from 'react';
+import { Link } from 'react-router-dom';
 const Home = () => {
     const [Posts , setPosts] = useState([]);
     // int Posts =int[];
@@ -20,7 +21,7 @@ const Home = () => {
          <ul key = {data._id}>
           <li>
             <p>{data.titre}</p>
-            <button >Lire</button>
+            <Link to ={`update-post/${data._id}`} className='btn'>Update</Link>
             <button >Éditer</button>
             <button >Supprimer</button>
           </li>

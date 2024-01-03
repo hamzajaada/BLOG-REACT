@@ -14,7 +14,6 @@ const GetRoutes= (req,res)=>{
 }
 const GetPosts = async (req,res) =>{
     try{
-        console.log("entre dans la fonction show");
          const posts = await Post.find();
          res.json(posts);
     } catch(err){ console.log("erreur lors de get post"+err);};
@@ -49,6 +48,7 @@ const addPost = async(req,res)=>{
 const ModifierPost = async(req,res)=>{
     try{
         await Post.findByIdAndUpdate(req.params.id,req.body).then((result)=>{
+        console.log("entre de modifer");
         res.json(result);
         })
     }catch(err){
