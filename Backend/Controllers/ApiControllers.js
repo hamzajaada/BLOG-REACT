@@ -35,8 +35,10 @@ const GetPostwID = async (req,res)=>{
 }
 const addPost = async(req,res)=>{
     try{
+        console.log(req.body);
         const posts = new Post(req.body);
         posts.save();
+        console.log("created " + posts);
     } catch(err){
         console.log("erreur lors de creation de post"+err);
     }
