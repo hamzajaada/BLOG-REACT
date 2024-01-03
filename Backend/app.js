@@ -29,6 +29,6 @@ mongoose.connect(url).then(()=>{
 }).catch((err)=>{console.log(err);})
 app.use("/api",apiRouter);
 
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log("Running!!");
 })
