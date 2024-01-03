@@ -14,6 +14,7 @@ const GetRoutes= (req,res)=>{
 }
 const GetPosts = async (req,res) =>{
     try{
+        console.log("entre dans la fonction show");
          const posts = await Post.find();
          res.json(posts);
     } catch(err){ console.log("erreur lors de get post"+err);};
