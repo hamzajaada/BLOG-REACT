@@ -4,7 +4,7 @@ const auth = async (req, res, next) => {
     try {
         const user = req.body.username;
         const password = req.body.password;
-     
+
         if (user === "admin" && password === "123") {
             req.session.username = user;
             req.session.password = password;

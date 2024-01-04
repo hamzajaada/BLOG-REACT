@@ -14,14 +14,15 @@ const GetRoutes= (req,res)=>{
 }
 const GetPosts = async (req, res) => {
     try {
-        console.log(req.session.username);
+        const username =req.session.username // Assurez-vous que username est défini ici
         const posts = await Post.find();
-        res.json(posts);
+        res.json({ posts, username: username });
     } catch (err) {
         console.log("Erreur lors de la récupération des articles : " + err);
         res.status(500).json({ error: "Erreur serveur" });
     }
 };
+
 const GetSession = async (req, res) => {
     if (req.session.username) {
         const session = req.session.username;
@@ -82,9 +83,8 @@ const Login = (req, res) => {
     try {
         const userSession = req.session.username;
         const passSession = req.session.password;
-        console.log("hh"+userSession);
         const jsenwebtkn = jwt.sign({ user: userSession, password: passSession }, "hamzajaada");
-        res.json({jsenwebtkn,userSession});
+        res.json({ jsenwebtkn, userSession });
     } catch (err) {
         console.log("Erreur lors de la génération du token");
         res.status(500).json({ error: "Erreur serveur" });
