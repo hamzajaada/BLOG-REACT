@@ -12,13 +12,26 @@ const GetRoutes= (req,res)=>{
     ]
     res.json(routes);
 }
-const GetPosts = async (req,res) =>{
-    try{
-         const posts = await Post.find();
-         res.json(posts);
-    } catch(err){ console.log("erreur lors de get post"+err);};
-   
-}
+const GetPosts = async (req, res) => {
+    try {
+        const posts = await Post.find();
+        res.json(posts);
+    } catch (err) {
+        console.log("Erreur lors de la récupération des articles : " + err);
+        res.status(500).json({ error: "Erreur serveur" });
+    }
+};
+const GetSession = async (req, res) => {
+    if (req.session.username) {
+        const session = req.session.username;
+        console.log("get session"+session);
+        res.json(session);
+    }
+    else{
+        console.log("aucun session creeer");
+        res.json("hh");
+    }  
+};
 const GetPostwID = async (req,res)=>{
    try{
         const postid = req.params.id;
@@ -64,23 +77,15 @@ const DeletePost = async (req,res)=>{
         console.log("erreur lors de suppression du post"+err);
     }
 }
-const Login = async(req,res)=>{
-    try{
-        // console.log(req.body);
-        const user = req.body.username;
-        const password = req.body.password;
-
-        if(user =="admin" && password =="123"){
-            const jsenwebtkn = jwt.sign({user:user,password:password},"hamzajaada");
-            res.json(jsenwebtkn);
-            // console.log(jsenwebtkn);
-        }
-        else{ 
-            console.log("erreur de l'authentification");
-        }
-    }catch(err){
-        console.log("erreur lors de login");
+const Login = (req, res) => {
+    try {
+        const userSession = req.session.username;
+        const passSession = req.session.password;
+        const jsenwebtkn = jwt.sign({ user: userSession, password: passSession }, "hamzajaada");
+        res.json({jsenwebtkn,userSession});
+    } catch (err) {
+        console.log("Erreur lors de la génération du token");
+        res.status(500).json({ error: "Erreur serveur" });
     }
-
-}
-module.exports={GetRoutes,GetPosts,GetPostwID,addPost,ModifierPost,DeletePost,Login};
+};
+module.exports={GetRoutes,GetPosts,GetPostwID,addPost,ModifierPost,DeletePost,Login,GetSession};

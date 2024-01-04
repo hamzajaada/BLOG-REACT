@@ -1,22 +1,24 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 // const url = "mongodb://localhost:27017/DSREACT"
 const url = "mongodb://127.0.0.1:27017/DSREACT";
 const session = require("express-session");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use(express.json());
-const apiRouter = require("./routes/ApiRoute");
-
 app.use(
   session({
     secret: "Secret",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   })
 );
+app.use(cors());
+app.use(express.json());
+app.use(cookieParser());
+const apiRouter = require("./routes/ApiRoute");
+
 
 mongoose
   .connect(url)
