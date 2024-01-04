@@ -2,10 +2,9 @@ const jwt = require("jsonwebtoken");
 
 const auth = async (req, res, next) => {
     try {
-        console.log(req.body);
         const user = req.body.username;
         const password = req.body.password;
-
+     
         if (user === "admin" && password === "123") {
             req.session.username = user;
             req.session.password = password;

@@ -14,6 +14,7 @@ const GetRoutes= (req,res)=>{
 }
 const GetPosts = async (req, res) => {
     try {
+        console.log(req.session.username);
         const posts = await Post.find();
         res.json(posts);
     } catch (err) {
@@ -81,6 +82,7 @@ const Login = (req, res) => {
     try {
         const userSession = req.session.username;
         const passSession = req.session.password;
+        console.log("hh"+userSession);
         const jsenwebtkn = jwt.sign({ user: userSession, password: passSession }, "hamzajaada");
         res.json({jsenwebtkn,userSession});
     } catch (err) {

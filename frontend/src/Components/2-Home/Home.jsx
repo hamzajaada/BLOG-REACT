@@ -11,9 +11,10 @@ const Home = () => {
   const [username, setUsername] = useState(null);
   // int Posts =int[];
   useEffect(()=>{
+    
      axios.get('http://localhost:3000/api/posts').then(res=>setPosts(res.data)).catch(err=>console.log(err));
      axios.get('http://localhost:3000/api/Session').then(res=>setUsername(res.data)).catch(err=>console.log(err));
-     axios.defaults.withCredentials = true;
+    
   },[])
 
   function hendelDelete(id) {
