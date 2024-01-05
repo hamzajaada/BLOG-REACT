@@ -15,10 +15,12 @@ const LoginForm = () => {
     e.preventDefault();
     axios.post('http://localhost:3000/api/login',{username,password}).then(
       res=>{
+        window.localStorage.setItem("token",res.data.jsenwebtkn)
         navigate('/Home')
+        window.location.reload();
+
       }
     ).catch(err=>console.log(err));
-
   }
   return (
     <div className="login-form-container">

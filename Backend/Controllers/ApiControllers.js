@@ -85,8 +85,9 @@ const Login = (req, res) => {
         const user = req.body.username;
         const password = req.body.password;
         const jsenwebtkn = jwt.sign({ user:user, password:password }, "hamzajaada");
-        console.log(jsenwebtkn);
-        res.json({ jsenwebtkn, user });
+        // console.log(jsenwebtkn);
+        res.json({ jsenwebtkn, user }); 
+        // localStorage.setItem("jsenwebtkn", jsenwebtkn);
     } catch (err) {
         console.log("Erreur lors de la génération du token");
         res.status(500).json({ error: "Erreur serveur" });

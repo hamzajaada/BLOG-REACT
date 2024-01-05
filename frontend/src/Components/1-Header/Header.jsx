@@ -3,13 +3,31 @@ import './Header.css'
 import {Link} from 'react-router-dom'
 
 const Header = () => {
+  
+  const token = window.localStorage.getItem("token");
+  function handeLogout(e){
+     window.localStorage.removeItem("token")
+     window.location.reload();
+  }
   return (
     <header>
       
       <h1><Link className='Link-header' to="/Home">Blog</Link></h1>
       <div>
-        <Link className='Link-header' to="/add-post">Ajoute</Link>
-        <Link className='Link-header'  to="/">Login</Link>
+        
+        {token ? (
+          <>
+            <Link className='Link-header' to="/add-post">Ajouter</Link>
+            <button className='Link-header' onClick={handeLogout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <Link className='Link-header' to="/">Login</Link>
+          </>
+        )}
+       
+        
+
         
       </div>
     </header>

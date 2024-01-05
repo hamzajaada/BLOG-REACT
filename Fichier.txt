@@ -19,3 +19,7 @@ const jsenwebtkn = jwt.sign({user:user,password:password},"hamzajaada");
 obligatoire de return un fichier un fichier, objet, mmessage in api 
 
 
+const token = window.localStorage.getItem("token");
+window.localStorage.setItem("token",res.data.jsenwebtkn)
+
+
