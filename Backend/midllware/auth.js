@@ -6,8 +6,8 @@ const auth = async (req, res, next) => {
         const password = req.body.password;
 
         if (user === "admin" && password === "123") {
-            req.session.username = user;
-            req.session.password = password;
+            // req.session.username = user;
+            // req.session.password = password
             next();
         } else {
             console.log("Erreur d'authentification");

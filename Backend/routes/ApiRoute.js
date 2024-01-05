@@ -10,6 +10,4 @@ routerApi.get("/posts/:id",ApiController.GetPostwID);
 routerApi.post("/posts",ApiController.addPost);
 routerApi.put("/posts/:id",ApiController.ModifierPost);
 routerApi.delete("/posts/:id",ApiController.DeletePost);
-
-
 module.exports = routerApi;

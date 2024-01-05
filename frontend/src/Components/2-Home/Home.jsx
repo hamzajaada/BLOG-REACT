@@ -16,9 +16,8 @@ const Home = () => {
       axios.get('http://localhost:3000/api/posts')
           .then(res => {
               // Récupération des articles et des informations de session depuis la réponse JSON
-              const { posts, username } = res.data;
+              const  posts = res.data;
               setPosts(posts);
-              setUsername(username);
           })
           .catch(err => console.log(err));
 
@@ -49,12 +48,7 @@ const Home = () => {
                   </ul>
               ))
           }
-          {username && (
-              <div>
-                  <p>Bienvenue, {username}!</p>
-                  {/* Affichez d'autres informations en fonction de l'utilisateur connecté si nécessaire */}
-              </div>
-          )}
+        
       </div>
   );
 };

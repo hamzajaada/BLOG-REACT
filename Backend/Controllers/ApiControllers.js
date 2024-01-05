@@ -14,9 +14,10 @@ const GetRoutes= (req,res)=>{
 }
 const GetPosts = async (req, res) => {
     try {
-        const username =req.session.username // Assurez-vous que username est défini ici
+        // const username =req.session.username // Assurez-vous que username est défini ici
+        // console.log("session"+username);
         const posts = await Post.find();
-        res.json({ posts, username: username });
+        res.json(posts);
     } catch (err) {
         console.log("Erreur lors de la récupération des articles : " + err);
         res.status(500).json({ error: "Erreur serveur" });
@@ -81,10 +82,11 @@ const DeletePost = async (req,res)=>{
 }
 const Login = (req, res) => {
     try {
-        const userSession = req.session.username;
-        const passSession = req.session.password;
-        const jsenwebtkn = jwt.sign({ user: userSession, password: passSession }, "hamzajaada");
-        res.json({ jsenwebtkn, userSession });
+        const user = req.body.username;
+        const password = req.body.password;
+        const jsenwebtkn = jwt.sign({ user:user, password:password }, "hamzajaada");
+        console.log(jsenwebtkn);
+        res.json({ jsenwebtkn, user });
     } catch (err) {
         console.log("Erreur lors de la génération du token");
         res.status(500).json({ error: "Erreur serveur" });
