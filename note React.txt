@@ -1,0 +1,86 @@
+note React:
+
+Plus rapide que les modification directes sur le DOM.
+
+
+React Js est un intermediare entre DOM et Logic de JS
+
+
+
+ JSX ==> (JSON XML) il permet de creer les balise de HTML dans JS . 
+babel :  il permet de transfer JSX a JS .
+
+npm start : Runner Le Fichier ReactJS .
+npx create-react-app hamza.
+ 
+il ya deux maniere de creer les copeneement  soit avec les classes ou bien les compossent fonctionelles. 
+WEBPACK : Son objectif principal est de regrouper des fichiers JavaScript pour une utilisation dans un navigateur
+
+Cycle de Vie  de componement :
+
+mounting = Montage de compenment . ComponentDidMount()
+ 
+Updating = Update . componentDidUpdate()
+
+Unmounting : Finalisation de componement .  componentWillUnmount()
+
+les composants fonctionnels peuvent également gérer l'état local .
+
+les props est une moyenne pour transferer les donnes entre les compenment . 
+
+
+Uniderectionelle : de parents => Enfant .
+immuabilite : l'enfant peut pas changer le valeur de Props
+Les types de donnnes : quelle que soit le type de donnes
+
+
+
+Les HOOKS :
+
+Elle permet aux composants fonctionnels de gérer l'état local, les effets de
+bord et d'accéder au cycle de vie du composant sans avoir besoin
+d'utiliser de classes.
+
+==> useState a changé cela en permettant aux composants fonctionnels de
+gérer leur propre état.
+
+==> useEffect c'est un hook qui effectue une operation selon un depandance soit [] , [id] ou sans depandence /// changement de id il fait le traitment de useEffect .  useEffect(() => {}) // useEffect(() => {}, []) // useEffect(() => {}, [id]);
+
+useReducer => gestion de l'état devient complexe
+useReducer est souvent préféré à useState lorsque le nouvel état dépend
+de l'état précédent, car il offre une manière plus sûre de mettre à jour
+l'état.
+
+React Router est une librairie qui affiche vos composants en fonction de
+l'URL de votre navigateur.
+
+Pour installer react-router-dom
+○ $npm install react-router-dom
+
+Ce module comporte plusieurs composantes
+○ BrouserRouter
+○ Routes
+○ Route
+○ Link
+
+les routes statiques ont un priorite que les routes dinamique.
+
+<Route path="/articles">
+ <Route index element={<Articles/>}/>
+ <Route path=":id" element={<Article/>}/>
+ <Route path="add" element={<AddArt/>}/>
+</Route
+
+
+
+
+
+APP {
+
+cd app;
+  mkdir backend 
+  cd backend 
+     npm i;
+
+npx create-react-app sfa;
+}
