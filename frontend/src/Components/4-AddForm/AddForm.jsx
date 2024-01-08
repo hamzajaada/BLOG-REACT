@@ -11,11 +11,9 @@ const AddForm = () => {
 
   function handelSubmit(e){
     e.preventDefault();
-    console.log('avant');
     axios.post("http://localhost:3000/api/posts", {titre,slug,content})
       .then(
         res=>{
-          console.log('après')
           navigate('/Home')
         }
       )

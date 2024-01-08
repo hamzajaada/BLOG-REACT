@@ -8,14 +8,13 @@ const UpdateForm = () => {
   const [titre, setTitre] = useState('');
   const [slug, setSlug] = useState('');
   const [content, setContent] = useState('');
-  const [Posts, setPosts] = useState([]);
+
   const{id} =useParams();
   const navigate = useNavigate();
   useEffect(()=>{
     axios.get(`http://localhost:3000/api/posts/${id}`)
     .then(res=>{ 
         const postData = res.data;
-        setPosts(postData);
         setTitre(postData.titre);
         setSlug(postData.slug);
         setContent(postData.content);
@@ -24,10 +23,8 @@ const UpdateForm = () => {
   },[id])
   function handelUpdate(e) {
     e.preventDefault();
-    console.log('avant');
     axios.put(`http://localhost:3000/api/posts/${id}`, {titre,slug,content})
       .then(res=>{
-          console.log('après')
           navigate('/Home')
         }
       )

@@ -3,6 +3,7 @@ const app = express();
 const routerApi = express.Router();
 const Authentification = require("../midllware/auth")
 const ApiController = require("../Controllers/ApiControllers");
+// api/
 routerApi.get("/",ApiController.GetRoutes);
 routerApi.post("/login",Authentification.auth,ApiController.Login);
 routerApi.get("/posts",ApiController.GetPosts);

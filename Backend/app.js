@@ -1,21 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const session = require("express-session");
-const cookieParser = require('cookie-parser');
+const apiRouter = require("./routes/ApiRoute");
+// const session = require("express-session");
+// const cookieParser = require('cookie-parser');
 const cors = require("cors");
 const url = "mongodb://127.0.0.1:27017/DSREACT";
 const app = express();
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({
-    secret : "HAMZA",
-    resave : false ,
-    saveUninitialized :false,
-}))
+// A({,a,a,a},{},{})
+// app.use(session({
+//     secret : "HAMZA",
+//     resave : false ,
+//     saveUninitialized :false,
+// }))
 app.use(cors());
 app.use(express.json());
-
-const apiRouter = require("./routes/ApiRoute");
 mongoose
   .connect(url)
   .then(() => {

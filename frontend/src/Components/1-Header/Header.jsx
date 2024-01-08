@@ -14,7 +14,7 @@ const Header = () => {
       
       <h1><Link className='Link-header' to="/Home">Blog</Link></h1>
       <div>
-        
+        {/* token nulll / chihaja */}
         {token ? (
           <>
             <Link className='Link-header' to="/add-post">Ajouter</Link>
@@ -24,11 +24,7 @@ const Header = () => {
           <>
             <Link className='Link-header' to="/">Login</Link>
           </>
-        )}
-       
-        
-
-        
+        )}  
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 // react
 npx create-react-app frontend      
 npm install react react-dom react-router-dom axios
+react useState useEffect useNavigate ......
 
 // link 
 import {Link} from 'react-router-dom'
@@ -23,3 +24,16 @@ const token = window.localStorage.getItem("token");
 window.localStorage.setItem("token",res.data.jsenwebtkn)
 
 
+ const navigate = useNavigate();
+
+
+ // post { handel[axios.get]}
+ // get useEffect
+
+
+ mongoose : 
+ find()
+ findbyid()
+ findbyidandUpdate()
+ findbyidanddelete()
+ save()
